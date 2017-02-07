@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfLesson05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson05"
+        mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="{StaticResource GeneralTitle}" 
+        Height="350" 
+        Width="525">
+    <Window.Resources>
+        <sys:String x:Key="WindowTitle">Resourses lesson</sys:String>
+    </Window.Resources>
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem  Header="New" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="_Open"></MenuItem>
+                <MenuItem Header="_Save"></MenuItem>
+                <Separator/>
+                <MenuItem Header="_Exit"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Margin="10" Name="StackPanel1">
+            <StackPanel.Resources>
+                <sys:String x:Key="LabelContent">It is some string</sys:String>
+                <LinearGradientBrush x:Key="ButtonGradientBackground">
+                    <GradientStop Color="Blue" Offset="0"/>
+                    <GradientStop Color="YellowGreen" Offset="0.5"/>
+                    <GradientStop Color="Yellow" Offset="1"/>
+                </LinearGradientBrush>
+                <Thickness x:Key="ButtonMargin" Top="10" Bottom="10"/>
+                <ContextMenu x:Key="CtxtMenu">
+                    <MenuItem Header="One"></MenuItem>
+                    <MenuItem Header="Two"></MenuItem>
+                    <MenuItem Header="Three"></MenuItem>
+                </ContextMenu>
+            </StackPanel.Resources>
+            <Label Content="{StaticResource LabelContent}"></Label>
+            <Button ContextMenu="{StaticResource CtxtMenu}" Background="{StaticResource ButtonGradientBackground}"
+                Margin="{StaticResource ButtonMargin}">
+                Button 1
+            </Button>
+            <Button ContextMenu="{StaticResource CtxtMenu}" Background="{StaticResource ButtonGradientBackground}"
+                Margin="{DynamicResource ButtonMargin}">
+                Button 2
+                
+            </Button>
+            <DockPanel>
+                <Button Click="Button_Click" Width="100" DockPanel.Dock="Right">Change Margin</Button>
+                <TextBox Name="TextBoxMargin"></TextBox>
+            </DockPanel>
+            <Button Click="Button_Click_1" Margin="{StaticResource ButtonMargin}">
+                Start other window
+            </Button>
+            <ListBox Name="ListBoxResources" />
+        </StackPanel>
+    </DockPanel>
+</Window>

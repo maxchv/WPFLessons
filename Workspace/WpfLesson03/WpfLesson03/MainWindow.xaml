@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfLesson03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="557.826" Width="525"
+        
+        >
+    <!--MaxHeight="350" MaxWidth="525"
+        MinHeight="350" MinWidth="525"-->
+    <!--<WrapPanel Orientation="Vertical">
+        <Button Width="100">Button1</Button>
+        <Button>Button2</Button>
+        <Button>Button3</Button>
+        <Button>Button4</Button>
+        <Button>Button5</Button>
+        <Button>Button6</Button>
+    </WrapPanel>-->
+    <!--<Button Width="150" Height="150" Name="Button1">
+        <Button.Content>
+            <UniformGrid Width="100" Height="100">
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+                <Button></Button>
+            </UniformGrid>
+        </Button.Content>
+    </Button>-->
+    <Window.Content>
+        <!--
+        <Canvas>
+        <Ellipse Height="74" Canvas.Left="55" Stroke="Black" Canvas.Top="73" Width="184">
+            <Ellipse.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="Blue" Offset="0"></GradientStop>
+                    <GradientStop Color="Magenta" Offset="0.5"></GradientStop>
+                    <GradientStop Color="Yellow" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Rectangle Fill="#FFF4F4F5" Height="86" Canvas.Left="291" Stroke="Black" Canvas.Top="73" Width="144"/>
+        <Button x:Name="button" Content="Button" Canvas.Left="293" Canvas.Top="95" Width="75" RenderTransformOrigin="0.457,0.406"/>
+    </Canvas>
+        -->
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <GroupBox Header="Group1" Visibility="Visible">
+                    <StackPanel Name="stackPanel" >
+                        <CheckBox IsChecked="{x:Null}" IsThreeState="True">Item 1</CheckBox>
+                        <CheckBox Name="checkBox">Item 2</CheckBox>
+                        <RadioButton>Item 3</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox>
+                    <GroupBox.Header>
+                        <Button>Click me</Button>
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <RadioButton>Item 10</RadioButton>
+                        <RadioButton>Item 11</RadioButton>
+                        <RadioButton>Item 12</RadioButton>
+                        <RadioButton>Item 13</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <!--<Button Height="50" FontSize="29">Button1</Button>
+                <Button Height="50" FontSize="29">Button2</Button>
+                <Button Height="50" FontSize="29">Button3</Button>
+                <Button Height="50" FontSize="29">Button</Button>
+                <Button Height="50" FontSize="29">Button</Button>
+                <Button Height="50" FontSize="29">Button</Button>
+                <Button Height="50" FontSize="29">Button</Button>-->
+                <Expander Header="Open this">
+                    Lorem
+                </Expander>
+                <TextBox Focusable="True" Name="outBox" 
+                         AcceptsTab="True" 
+                         AcceptsReturn="True" 
+                         Language="ru-RU"
+                         SelectionBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" 
+                         SpellCheck.IsEnabled="True"></TextBox>
+               
+                <PasswordBox></PasswordBox>
+                
+                <Button IsDefault="True" Click="ButtonBase_OnClickAccept">Default Button</Button>
+                <Button IsCancel="True" Click="ButtonBase_OnClickEsc">Cancel button</Button>
+                <ComboBox SelectedIndex="1" SelectionChanged="Selector_OnSelected"> 
+                    <TextBox>test</TextBox>
+                    <Label>Label</Label>
+                    <CheckBox> CheckBox</CheckBox>
+                </ComboBox>
+                <ListBox>
+                    <ListBoxItem>Item 1</ListBoxItem>
+                    <ListBoxItem>Item 2</ListBoxItem>
+                    <ListBoxItem>Item 3</ListBoxItem>
+                    <TextBlock>Item 4</TextBlock>
+                    <Label>Label</Label>
+                </ListBox>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Slider Width="20" Margin="10" 
+                                TickPlacement="BottomRight"></Slider>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+           
+        </ScrollViewer>
+
+    </Window.Content>
+</Window>

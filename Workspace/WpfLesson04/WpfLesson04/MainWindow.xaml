@@ -1,0 +1,136 @@
+﻿<Window x:Class="WpfLesson04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson04"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="525">
+    <StackPanel>
+        <ComboBox DisplayMemberPath="DayOfWeek">
+            <sys:DateTime>1/27/2017</sys:DateTime>
+            <sys:DateTime>1/1/2017</sys:DateTime>
+            <sys:DateTime>1/27/2016</sys:DateTime>
+        </ComboBox>
+        <ComboBox IsEditable="True" IsReadOnly="True"                 
+                  ScrollViewer.CanContentScroll="False"
+                  ScrollViewer.IsDeferredScrollingEnabled="True"> 
+            <!--TextSearch.TextPath="Children[1].Children[0].Content">-->
+            <StackPanel Orientation="Horizontal" TextSearch.Text="Вася Лучше всех">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Вася</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Просто Мария">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Маша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Дашенька">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Даша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <Label TextSearch.Text="Метка">test</Label>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+        </ComboBox>
+
+        <ListBox 
+            Name="listbox"            
+            SelectionMode="Extended"
+            Height="300"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            ScrollViewer.CanContentScroll="False"
+            ScrollViewer.IsDeferredScrollingEnabled="True">    
+                <StackPanel Orientation="Horizontal" TextSearch.Text="Вася Лучше всех">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Вася</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  TextSearch.Text="Просто Мария">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Маша</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  TextSearch.Text="Дашенька">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Даша</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+                <Label TextSearch.Text="Метка">test</Label>
+                <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                    <Image Width="70" Source="abonent.png"></Image>
+                    <StackPanel Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                        <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                    </StackPanel>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal"  TextSearch.Text="Мишутка">
+                <Image Width="70" Source="abonent.png"></Image>
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="20" FontWeight="Bold">Миша</Label>
+                    <Label FontSize="16">Tel: + 3 (000) 123-45-67</Label>
+                </StackPanel>
+            </StackPanel>
+        </ListBox>
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBox Name="name"></TextBox>
+            <TextBox Name="phone"></TextBox>
+            <Button Name="add" Click="add_Click">Add</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

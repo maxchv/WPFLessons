@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfLesson02.UserObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson02"
+        mc:Ignorable="d"
+        Title="UserObject" Height="300" Width="300">
+    <Grid>
+        <Label MouseDown="UIElement_OnMouseDown" Height="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <Label.Width>100</Label.Width>
+            <Label.Content>
+                <local:Person Age="25" x:Name="Person">
+                    <local:Person.Name>
+                        Вася
+                    </local:Person.Name>
+                </local:Person>
+            </Label.Content>
+        </Label>
+    </Grid>
+</Window>
