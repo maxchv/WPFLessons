@@ -1,0 +1,50 @@
+﻿<Window x:Class="CommandsDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CommandsDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="Cut" Executed="CommandBinding_Executed_1" CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="local:UserCommands.Exit" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Command="New" />
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Save"/>
+                <Separator/>
+                <MenuItem Command="local:UserCommands.Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="Cut" />
+                <MenuItem Command="Copy"/>
+                <MenuItem Command="Paste"/>                
+            </MenuItem>
+            <MenuItem Header="_About">
+                <MenuItem Header="_Unlock">
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Password" />
+                                <TextBox Name="tbPass" Width="50" TextChanged="tbPass_TextChanged"/>                                
+                            </WrapPanel>
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox>
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Cut" Click="MenuItem_Click_1" />
+                    <MenuItem Header="C_opy"/>
+                    <MenuItem Header="_Paste"/>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+    </DockPanel>
+</Window>
