@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="shop.css"?> 
+<!--
+	Пример описания спортивного магазина
+-->
+<shop>
+	<address>
+		<country>Украина</country>
+		<city>Днепр</city>
+		<street>ул. Яворницкого, 101</street>		
+	</address>
+	<groups>
+		<group id="1">
+			<name>Спортивная одежда</name>
+		</group>
+		<group id="2">
+			<name>Спортивный инвентарь</name>
+		</group>
+		<group id="3">
+			<name>Спортивное питание</name>
+		</group>
+	</groups>
+	<goods>
+		<good id="1" group-id="1">
+			<name>Спортивный костюм Abibas</name>
+			<made>USA</made>
+			<price>150</price>
+		</good>
+		<good id="2" group-id="2">
+			<name>Палатка</name>
+			<made>China</made>
+			<price>3000</price>
+		</good>
+		<good id="3" group-id="3">
+			<name>Coca Cola Ligth</name>
+			<made>Ukraine</made>
+			<price>10</price>
+		</good>
+		<good id="4" group-id="4">
+			<name><![CDATA[
+				<<Супер-пупер>> сапоги скороходы
+				]]>
+			</name>
+		</good>
+	</goods>
+</shop>

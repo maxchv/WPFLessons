@@ -1,0 +1,31 @@
+﻿<Window x:Class="ObjectDataProviderDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ObjectDataProviderDemo"
+        mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="PotoProvider" ObjectType="{x:Type local:Photo}">
+            <ObjectDataProvider.ConstructorParameters>
+                <sys:String>http://img.viva.ua/pictures/content/26/26024_315.jpg</sys:String>
+            </ObjectDataProvider.ConstructorParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="Items" 
+                            ObjectType="{x:Type local:Photo}"
+                            MethodName="GetItems">
+            <ObjectDataProvider.ConstructorParameters>
+                <sys:String>Items</sys:String>
+            </ObjectDataProvider.ConstructorParameters>
+            <ObjectDataProvider.MethodParameters>
+                <sys:Int32>10</sys:Int32>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <StackPanel>
+        <Image Height="300" Source="{Binding Source={StaticResource PotoProvider}, Path=Url}"/>
+        <ListBox ItemsSource="{Binding Source={StaticResource Items}}"/>
+    </StackPanel>
+</Window>

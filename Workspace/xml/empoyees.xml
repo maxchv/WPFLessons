@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<notebook xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+          xsd:noNamespaceSchemaLocation="modelNoteBook2.xsd">
+		  
+  <person persID="1" activity="курьер">
+    <Name>Сергей</Name>
+    <surname>Ткаченко</surname>
+    <address>
+      <country>Украина</country>
+      <cityOrVillage>
+        <city>Одесса</city>
+      </cityOrVillage>
+      <street>Дерибасовская</street>
+      <house>7</house>      
+    </address>
+    <phone>(044)557-22-45</phone>
+  </person>
+  
+  <person persID="2" activity="бухгалтер">
+    <Name>Генрих</Name>
+    <surname>Шнапс</surname>
+    <address>
+      <country>Германия</country>
+      <cityOrVillage>
+        <city>Гамбург</city>
+      </cityOrVillage>
+      <street>Marktplatz</street>
+      <house>9</house>
+    </address>
+    <phone>(123)7551245</phone>
+  </person>
+  
+</notebook>

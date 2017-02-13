@@ -1,0 +1,91 @@
+﻿<Window x:Class="DataProvidersDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataProvidersDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <XmlDataProvider x:Key="SimpleProvider" XPath="GameStats">
+            <x:XData>
+                <GameStats xmlns="">
+                    <GameStat Type="Beginner">
+                        <HighScore>1203</HighScore>
+                    </GameStat>
+                    <GameStat Type="Intermediate">
+                        <HighScore>1089</HighScore>
+                    </GameStat>
+                    <GameStat Type="Advanced">
+                        <HighScore>541</HighScore>
+                    </GameStat>
+                </GameStats>
+            </x:XData>
+        </XmlDataProvider>
+        <XmlDataProvider x:Key="CurrencyDataProvider" 
+                         Source="http://resources.finance.ua/ru/public/currency-cash.xml" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="1" 
+                 ItemsSource="{Binding Source={StaticResource SimpleProvider}, 
+                                       XPath=GameStat}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="200" Content="{Binding XPath=@Type}"/>
+                        <Label Content="{Binding XPath=HighScore}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <GridSplitter Grid.Row="0" Height="3"/>
+        <ListBox Grid.Row="0" 
+                 ItemsSource="{Binding Source={StaticResource CurrencyDataProvider}, 
+                                       XPath=//organization}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="130" Content="{Binding XPath=title/@value}" />
+                        <WrapPanel>
+                            <Label Content="EUR: "/>
+                            <Label Content="{Binding XPath=currencies/c[@id\=\'EUR\']/@br}" />
+                            <Label Content="USD: "/>
+                            <Label Content="{Binding XPath=currencies/c[@id\=\'USD\']/@br}" />
+                            <Label Content="RUB: "/>
+                            <Label Content="{Binding XPath=currencies/c[@id\=\'RUB\']/@br}" />
+                        </WrapPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListView x:Name="lvCurrencies"
+                  ItemsSource="{Binding Source={StaticResource CurrencyDataProvider}, 
+                                        XPath=//organization}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=title/@value}" 
+                                    Width="120" Header="Name">
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=currencies/c[@id\=\'EUR\']/@br}" 
+                                    Width="120">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader 
+                                Tag="EUR"
+                                Click="GridViewColumnHeader_Click">EUR</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=currencies/c[@id\=\'USD\']/@br}" 
+                                    Width="120" Header="USD">
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=currencies/c[@id\=\'RUB\']/@br}" 
+                                    Width="120" Header="RUB">
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
