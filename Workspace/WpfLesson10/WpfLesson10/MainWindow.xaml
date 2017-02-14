@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfLesson10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson10"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <x:Array x:Key="items" Type="sys:String">
+            <sys:String>one</sys:String>
+            <sys:String>one</sys:String>
+            <sys:String>one</sys:String>
+        </x:Array>
+        <!--<local:Car Id="1" Model="ferrari" x:Key="ferrari" ></local:Car>
+        <ObjectDataProvider x:Key="CarProvider" 
+                            ObjectInstance="{StaticResource ferrari}">            
+        </ObjectDataProvider>-->
+        <!--инстанцирование объекта с конструктором-->
+        <ObjectDataProvider ObjectType="{x:Type local:Car}" 
+                            x:Key="CarProvider">
+            <ObjectDataProvider.ConstructorParameters>
+                <sys:String>Ferrari</sys:String>
+            </ObjectDataProvider.ConstructorParameters>
+        </ObjectDataProvider>
+
+        <!--Предоставление данных возвращаемых не статическим методом-->
+        <ObjectDataProvider ObjectInstance="{StaticResource CarProvider}"
+                            x:Key="DummyItems"
+                            MethodName="Items">
+            <ObjectDataProvider.MethodParameters>
+                <sys:Int32>2</sys:Int32>
+            </ObjectDataProvider.MethodParameters>    
+        </ObjectDataProvider>
+
+        <!--предоставление данных возращаемых статическим методом-->
+        <ObjectDataProvider ObjectType="{x:Type local:Car}"
+                            x:Key="CarItems"
+                            MethodName="Cars"
+                            IsAsynchronous="True">
+            <ObjectDataProvider.MethodParameters>
+                <sys:Int32>5</sys:Int32>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <StackPanel Margin="5">
+        <!--<Expander Margin="5" Header="ObjectDataProvider example #1">
+            <Label Content="{Binding Source={StaticResource CarProvider}, Path=Model}" />
+        </Expander>-->
+        <!--<Expander Margin="5" Header="ObjectDataProvider example #2">-->
+        <ListBox ItemsSource="{StaticResource items}" />
+        <ListBox ItemsSource="{Binding Source={StaticResource CarItems}}" />
+        <ListBox ItemsSource="{Binding Source={StaticResource DummyItems}}" />
+        <!--</Expander>-->
+    </StackPanel>
+</Window>
