@@ -1,0 +1,87 @@
+﻿<Window x:Class="TreeViewDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreeViewDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Margin="10">
+        <Expander Header="A simple TreeView example">
+            <TreeView>
+                <TreeViewItem Header="Level 1" IsExpanded="True">
+                    <TreeViewItem Header="Level 2.1"/>
+                    <TreeViewItem Header="Level 2.2" IsExpanded="True">
+                        <TreeViewItem Header="Level 3.1"/>
+                        <TreeViewItem Header="Level 3.2"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Level 2.3" />
+                </TreeViewItem>
+            </TreeView>
+        </Expander>
+        <Expander IsExpanded="False" Header="TreeView's with images and other control">
+            <TreeView>
+                <TreeViewItem IsExpanded="True">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal"
+                                    TextBlock.Foreground="Blue">
+                            <Image Source="http://www.myiconfinder.com/uploads/iconsets/128-128-2518e713599da2aab2a511fa707de9a4-marker.png"
+                                   Height="20"
+                                   Margin="1"></Image>
+                            <TextBlock Text="Level 1 (Blue)" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                    <TreeViewItem Header="Level 2.1"/>
+                    <TreeViewItem Header="Level 2.2" IsExpanded="True">
+                        <TreeViewItem Header="Level 3.1"/>
+                        <TreeViewItem Header="Level 3.2"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Level 2.3" />
+                </TreeViewItem>
+            </TreeView>
+        </Expander>
+        <Expander IsExpanded="False" Header="A basic data bound TreeView">
+            <TreeView Name="trvContainer">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type local:Container}" ItemsSource="{Binding Items}">
+                        <TextBlock Text="{Binding Title}"/>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Expander>
+        <Expander IsExpanded="False" Header="Multiple templates for different types">
+            <TreeView Name="trvFamily">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate
+                        DataType="{x:Type local:Family}"
+                        ItemsSource="{Binding Members}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image                                 
+                                Height="25"
+                                Source="http://www.uidownload.com/files/318/785/277/group-human-men-people-users-icon.png"/>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="[" Foreground="Blue"/>
+                            <TextBlock Text="{Binding Members.Count}" Foreground="Blue"/>
+                            <TextBlock Text="]" Foreground="Blue"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                    <DataTemplate DataType="{x:Type local:FamilyMember}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="https://cdn2.iconfinder.com/data/icons/android-ui-1/16/12_-_user_add_plus_contact_account_new_create-128.png" />
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="(" Foreground="Green"/>
+                            <TextBlock Text="{Binding Age}" Foreground="Green"/>
+                            <TextBlock Text="years )" Foreground="Green"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+        </Expander>
+        <Expander Header="Lazy Load Example">
+            <TreeView 
+                Name="tvDrivers"
+                TreeViewItem.Expanded="TreeView_Expanded" 
+                Margin="10"></TreeView>
+        </Expander>
+    </StackPanel>
+</Window>
