@@ -1,0 +1,28 @@
+﻿<Window x:Class="NonRectangleWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NonRectangleWindow"
+        mc:Ignorable="d"  
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        MouseUp="Window_MouseUp"
+        Title="MainWindow" Height="350" Width="525">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="png.png"/>
+    </Window.Background>-->
+    <Grid>
+        <Ellipse Opacity="0.5">
+            <Ellipse.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0" Color="Blue"></GradientStop>
+                    <GradientStop Offset="1" Color="White"></GradientStop>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Button Height="20" Width="100"> Close </Button>
+    </Grid>
+</Window>
