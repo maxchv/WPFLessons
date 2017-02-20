@@ -1,0 +1,50 @@
+﻿<Window x:Class="AnimByPath.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimByPath"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <PathGeometry x:Key="path" >
+            <PathFigure IsClosed="True">
+                <ArcSegment Point="100,200" Size="15,10" SweepDirection="Clockwise"></ArcSegment>
+                <ArcSegment Point="400,50" Size="5,5" ></ArcSegment>
+            </PathFigure>
+        </PathGeometry>
+    </Window.Resources>
+    <Canvas>
+
+        <Path StrokeThickness="1" 
+              Data="{StaticResource path}" 
+              Canvas.Top="10" Canvas.Left="10" Stroke="Black">
+        </Path>
+
+        <Image Source="fly.jpg" Width="40">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimationUsingPath 
+                                    PathGeometry="{StaticResource path}"
+                                    Storyboard.TargetProperty="(Canvas.Left)"
+                                    RepeatBehavior="Forever"
+                                    Duration="0:0:5"
+                                    Source="X" />
+                                <DoubleAnimationUsingPath 
+                                    PathGeometry="{StaticResource path}"
+                                    Storyboard.TargetProperty="(Canvas.Top)"
+                                    Duration="0:0:5"
+                                    RepeatBehavior="Forever"
+                                    Source="Y" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+    </Canvas>
+</Window>

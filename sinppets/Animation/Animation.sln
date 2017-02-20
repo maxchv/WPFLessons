@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animation", "Animation\Animation.csproj", "{0B10C783-18A5-4CD1-899A-12FD765288DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationFly", "AnimationFly\AnimationFly.csproj", "{A844F0C5-30B7-46FA-8354-34332D481A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimByPath", "AnimByPath\AnimByPath.csproj", "{693C86EB-FE94-4E90-BB40-00EFD6F08F71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B10C783-18A5-4CD1-899A-12FD765288DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B10C783-18A5-4CD1-899A-12FD765288DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B10C783-18A5-4CD1-899A-12FD765288DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B10C783-18A5-4CD1-899A-12FD765288DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A844F0C5-30B7-46FA-8354-34332D481A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A844F0C5-30B7-46FA-8354-34332D481A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A844F0C5-30B7-46FA-8354-34332D481A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A844F0C5-30B7-46FA-8354-34332D481A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693C86EB-FE94-4E90-BB40-00EFD6F08F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693C86EB-FE94-4E90-BB40-00EFD6F08F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693C86EB-FE94-4E90-BB40-00EFD6F08F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693C86EB-FE94-4E90-BB40-00EFD6F08F71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
