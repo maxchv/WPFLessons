@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="MVVMDemo.Views.ConverterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMDemo.Views"
+             mc:Ignorable="d" 
+             xmlns:ViewModels="clr-namespace:MVVMDemo.ViewModels"
+             d:DataContext="{d:DesignInstance ViewModels:Presenter}"
+             d:DesignHeight="340" 
+             d:DesignWidth="300">
+    <StackPanel>
+        <Label Margin="5,5,5,0">Text to convert</Label>
+        <TextBox Text="{Binding Path=SomeText, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+        <Label Margin="5,5,5,0">History</Label>
+        <ListBox ItemsSource="{Binding Path=History}" Margin="5" Height="200"></ListBox>
+        <Button Command="{Binding ConverterTextCommand}" Margin="5">Convert</Button>
+    </StackPanel>
+</UserControl>
