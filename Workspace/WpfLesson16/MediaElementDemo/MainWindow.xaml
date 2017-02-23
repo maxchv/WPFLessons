@@ -1,0 +1,54 @@
+﻿<Window x:Class="MediaElementDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaElementDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="btn_play">
+                <BeginStoryboard Name="film">
+                    <Storyboard>
+                        <MediaTimeline Storyboard.TargetName="mediaElement"                    
+                            Source="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4"/>
+                    </Storyboard>
+                </BeginStoryboard>                
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="btn_stop">
+                <StopStoryboard BeginStoryboardName="film" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="btn_pause">
+                <PauseStoryboard BeginStoryboardName="film" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="btn_resume">
+                <ResumeStoryboard BeginStoryboardName="film" />
+            </EventTrigger>
+        </Grid.Triggers>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <MediaElement Name="mediaElement"                      
+            LoadedBehavior="Manual" />
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+            <CheckBox IsChecked="{Binding ElementName=mediaElement, Path=IsMuted}"/>
+            <Slider Width="200" Maximum="1" Value="{Binding ElementName=mediaElement, Path=Volume}"></Slider>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2"  Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Name="btn_play">Play</Button>
+            <Button Name="btn_stop">Stop</Button>
+            <Button Name="btn_pause">Pause</Button>
+            <Button Name="btn_resume">Resume</Button>
+        </WrapPanel>
+        <ListView Grid.Column="1" Width="100">
+            
+        </ListView>
+    </Grid>
+</Window>

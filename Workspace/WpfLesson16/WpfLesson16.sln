@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLesson16", "WpfLesson16\WpfLesson16.csproj", "{2C433E46-DEB8-4345-83E5-119815845141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaElementDemo", "MediaElementDemo\MediaElementDemo.csproj", "{C9E87BF1-401C-43D1-B471-B9631FEF1A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechDemo", "SpeechDemo\SpeechDemo.csproj", "{9F16E032-023C-405E-97F0-4A78DFB1DA3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C433E46-DEB8-4345-83E5-119815845141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C433E46-DEB8-4345-83E5-119815845141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C433E46-DEB8-4345-83E5-119815845141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C433E46-DEB8-4345-83E5-119815845141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E87BF1-401C-43D1-B471-B9631FEF1A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E87BF1-401C-43D1-B471-B9631FEF1A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E87BF1-401C-43D1-B471-B9631FEF1A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E87BF1-401C-43D1-B471-B9631FEF1A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F16E032-023C-405E-97F0-4A78DFB1DA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F16E032-023C-405E-97F0-4A78DFB1DA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F16E032-023C-405E-97F0-4A78DFB1DA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F16E032-023C-405E-97F0-4A78DFB1DA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

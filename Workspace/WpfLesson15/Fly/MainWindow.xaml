@@ -1,0 +1,61 @@
+﻿<Window x:Class="Fly.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fly"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Canvas>
+        <Image Source="fly.jpg" Width="30" Canvas.Left="0" Canvas.Top="0">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)"
+                                                 Duration="0:0:5"
+                                                 From="0" To="500">
+                                    <DoubleAnimation.EasingFunction>
+                                        <QuadraticEase />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimationUsingKeyFrames
+                                    Duration="0:0:5"
+                                    Storyboard.TargetProperty="(Canvas.Top)">                                    
+                                    <!--<LinearDoubleKeyFrame Value="200" KeyTime="0:0:0"/>
+                                    <LinearDoubleKeyFrame Value="0" KeyTime="33%"/>
+                                    <LinearDoubleKeyFrame Value="200" KeyTime="0:0:2"/>
+                                    <LinearDoubleKeyFrame Value="100" KeyTime="0:0:3"/>-->
+                                    <!--<SplineDoubleKeyFrame 
+                                        KeySpline="0,1 1,0"
+                                        Value="200" KeyTime="0:0:0"/>
+                                    <SplineDoubleKeyFrame 
+                                        KeySpline="0,1 1,0"
+                                        Value="0" KeyTime="0:0:1"/>
+                                    <SplineDoubleKeyFrame 
+                                        KeySpline="0,1 1,0"
+                                        Value="100" KeyTime="0:0:2"/>
+                                    <SplineDoubleKeyFrame 
+                                        KeySpline="0,1 1,0"
+                                        Value="0" KeyTime="0:0:3"/>-->
+                                    <DiscreteDoubleKeyFrame                                      
+                                        Value="200" KeyTime="0:0:0"/>
+                                    <LinearDoubleKeyFrame                                         
+                                        Value="0" KeyTime="0:0:1">                                        
+                                    </LinearDoubleKeyFrame>
+                                    <SplineDoubleKeyFrame                                         
+                                        KeySpline="0,1 1,0"
+                                        Value="100" KeyTime="0:0:2"/>
+                                    <DiscreteDoubleKeyFrame                                         
+                                        Value="0" KeyTime="0:0:3"/>
+                                </DoubleAnimationUsingKeyFrames>
+
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+    </Canvas>
+</Window>

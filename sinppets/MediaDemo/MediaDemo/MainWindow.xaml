@@ -1,0 +1,60 @@
+﻿<Window x:Class="MediaDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        >
+    <Grid>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="play">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Name="medialine">
+                        <Storyboard>
+                            <MediaTimeline 
+                                            CurrentTimeInvalidated="MediaTimeline_CurrentTimeInvalidated"
+                                           Storyboard.TargetName="player"
+                                           Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="stop">
+                <EventTrigger.Actions>
+                    <StopStoryboard BeginStoryboardName="medialine"/>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="pause">
+                <EventTrigger.Actions>
+                    <PauseStoryboard BeginStoryboardName="medialine"/>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="resume">
+                <EventTrigger.Actions>
+                    <ResumeStoryboard BeginStoryboardName="medialine"/>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Grid.Triggers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <MediaElement
+            MediaOpened="player_MediaOpened"
+            ScrubbingEnabled="True"
+            Grid.Row="0"
+            Name="player"            
+            LoadedBehavior="Manual" />
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock>Volume</TextBlock>
+            <Slider Value="{Binding Path=Volume, ElementName=player}" Maximum="1" Width="100"/>
+            <Button Name="play">Play</Button>
+            <Button Name="stop">Stop</Button>
+            <Button Name="pause">Pause</Button>
+            <Button Name="resume">Resume</Button>
+            <TextBlock Width="100" Name="pos"/>
+        </WrapPanel>
+    </Grid>
+</Window>
