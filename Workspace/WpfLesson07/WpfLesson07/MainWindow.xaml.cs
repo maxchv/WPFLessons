@@ -39,21 +39,14 @@ namespace WpfLesson07
             students.Add(new Student { Name = "Маша", Age = 24, Email = "masha@mail.com" });
             students.Add(new Student { Name = "Даша", Age = 32, Email = "darina@yahoo.com" });
             lvStudents.ItemsSource = students;
-
-            CollectionViewSource.GetDefaultView(lvStudents.ItemsSource).Filter = NameFilter;
+            lvStudents.Items.Filter = NameFilter;
+            //CollectionViewSource.GetDefaultView(lvStudents.ItemsSource).Filter = NameFilter;
         }
 
         private bool NameFilter(object obj)
         {
-            if(string.IsNullOrEmpty(filter.Text))
-            {
-                return true;
-            }
-            else
-            {
-                Student student = obj as Student;
-                return student.Name.ToLower().IndexOf(filter.Text.ToLower()) >= 0;
-            }
+            return string.IsNullOrEmpty(filter.Text) 
+                || (obj as Student).Name.StartsWith(filter.Text);            
         }
 
         private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
@@ -71,6 +64,7 @@ namespace WpfLesson07
         private void filter_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lvStudents.ItemsSource).Refresh();
+            //lvStudents.Items.Refresh();
         }
     }
 

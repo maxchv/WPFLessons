@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLesson07"
         mc:Ignorable="d"
+        xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
+        <coll:ArrayList x:Key="arr">
+            <sys:String>one</sys:String>
+            <sys:String>two</sys:String>
+            <sys:String>three</sys:String>
+            <sys:String>four</sys:String>
+        </coll:ArrayList>
+        <coll:Hashtable x:Key="hashtable">
+            <coll:DictionaryEntry Key="one" Value="one" x:Key="key1"/>
+            <coll:DictionaryEntry Key="one" Value="two" x:Key="key2"/>
+            <coll:DictionaryEntry Key="one" Value="three" x:Key="key3"/>
+        </coll:Hashtable>
         <x:Array Type="sys:String" x:Key="items">
             <sys:String>Item #1</sys:String>
             <sys:String>Item #2</sys:String>
@@ -18,7 +30,7 @@
     </Window.Resources>
     <StackPanel>
         <Expander Header="Simple ItemsControl example">
-            <ItemsControl ItemsSource="{StaticResource items}"/>
+            <ItemsControl ItemsSource="{StaticResource hashtable}" DisplayMemberPath="Value.Value"/>
         </Expander>
         <Expander Header="ItemsControl with data bindings">
             <ItemsControl Name="icToDoList">
@@ -68,7 +80,8 @@
                             <GridViewColumn Width="120"
                                         DisplayMemberBinding="{Binding Name}">
                                 <GridViewColumn.Header>
-                                    <GridViewColumnHeader Click="GridViewColumnHeader_Click">
+                                    <GridViewColumnHeader 
+                                        Click="GridViewColumnHeader_Click">
                                         Name
                                     </GridViewColumnHeader>
                                 </GridViewColumn.Header>

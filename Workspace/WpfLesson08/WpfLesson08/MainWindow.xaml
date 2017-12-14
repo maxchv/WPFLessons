@@ -8,6 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
+        <ObjectDataProvider
+            
+            x:Key="Provider"
+            ObjectType="{x:Type local:EnumToString}"
+            MethodName="GetString">
+        </ObjectDataProvider>
         <ObjectDataProvider x:Key="GenderDataProvider"
                             MethodName="GetValues"
                             ObjectType="{x:Type sys:Enum}">
@@ -18,13 +24,16 @@
     </Window.Resources>
     <StackPanel Margin="5">
         <DatePicker />
+        <DataGrid Name="Grid">
+            
+        </DataGrid>
         <DataGrid Name="dgStudents" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" />
                 <DataGridCheckBoxColumn Header="Женат/Замужем" Binding="{Binding IsMarried}" />
                 <DataGridComboBoxColumn Header="Пол" 
                                         SelectedItemBinding="{Binding Gender}" 
-                                        ItemsSource="{Binding Source={StaticResource GenderDataProvider}}" />
+                                        ItemsSource="{Binding Source={StaticResource Provider}}" />
                 <DataGridHyperlinkColumn Header="Email" Binding="{Binding Email}" />
                 <DataGridTemplateColumn Header="День рождения">                    
                     <DataGridTemplateColumn.CellTemplate>

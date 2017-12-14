@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.CommandBindings>
-        <CommandBinding Command="Cut" Executed="CommandBinding_Executed_1" CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="Application.Cut" Executed="CommandBinding_Executed_1" 
+                        CanExecute="CommandBinding_CanExecute"/>
         <CommandBinding Command="local:UserCommands.Exit" />
     </Window.CommandBindings>
     <DockPanel>

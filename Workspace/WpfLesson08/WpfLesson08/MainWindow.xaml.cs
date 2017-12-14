@@ -30,8 +30,14 @@ namespace WpfLesson08
             students.Add(new Student { Id = 2, Email = "mail@mail.com", Gender = Gender.Female, Name = "Маша", BirthDay = new DateTime(2000, 1, 10) });
             students.Add(new Student { Id = 3, Email = "mail@mail.com", Gender = Gender.Female, Name = "Даша", BirthDay = new DateTime(1980, 10, 1) });
             students.Add(new Student { Id = 4, Email = "mail@mail.com", Gender = Gender.Male, Name = "Петя", BirthDay = new DateTime(1985, 11, 20) });
-            dgStudents.ItemsSource = students;            
+            dgStudents.ItemsSource = students;
+            Grid.ItemsSource = students;
         }
+    }
+
+    class EnumToString
+    {
+        public Array GetString() => Enum.GetValues(typeof(Gender));
     }
 
     enum Gender
