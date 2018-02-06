@@ -13,7 +13,7 @@
             <sys:DateTime>1/1/2017</sys:DateTime>
             <sys:DateTime>1/27/2016</sys:DateTime>
         </ComboBox>
-        <ComboBox IsEditable="True" IsReadOnly="True"                 
+        <ComboBox IsEditable="True" IsReadOnly="False"                 
                   ScrollViewer.CanContentScroll="False"
                   ScrollViewer.IsDeferredScrollingEnabled="True"> 
             <!--TextSearch.TextPath="Children[1].Children[0].Content">-->
