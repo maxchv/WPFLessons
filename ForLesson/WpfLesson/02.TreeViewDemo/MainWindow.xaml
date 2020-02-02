@@ -1,0 +1,23 @@
+﻿<Window x:Class="_02.TreeViewDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02.TreeViewDemo"
+        xmlns:model="clr-namespace:_02.TreeViewDemo.Model"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <TreeView x:Name="CategoriesTreeView">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Categories}">
+                    <WrapPanel>
+                        <Ellipse Width="16" Height="16" Margin="0 0 10 0" Fill="Green"/>
+                        <TextBlock Text="{Binding Name}"/>
+                    </WrapPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>
