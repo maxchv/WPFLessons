@@ -6,17 +6,8 @@
         xmlns:local="clr-namespace:_01.DataGridDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <ObjectDataProvider x:Key="products" ObjectType="local:ProductRepository" MethodName="FindAll"/>
-    </Window.Resources>
+   
     <StackPanel>
-        <DataGrid ItemsSource="{Binding Source={StaticResource products}}"
-                  RowBackground="LightBlue"
-                  AlternatingRowBackground="LightYellow"
-                  GridLinesVisibility="All"
-                  HeadersVisibility="All"
-                  HorizontalGridLinesBrush="Black"
-                  VerticalGridLinesBrush="Black"
-                  AutoGenerateColumns="True"  />
+        
     </StackPanel>
 </Window>

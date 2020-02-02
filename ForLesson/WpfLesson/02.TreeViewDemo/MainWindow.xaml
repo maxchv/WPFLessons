@@ -9,15 +9,6 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <TreeView x:Name="CategoriesTreeView">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Categories}">
-                    <WrapPanel>
-                        <Ellipse Width="16" Height="16" Margin="0 0 10 0" Fill="Green"/>
-                        <TextBlock Text="{Binding Name}"/>
-                    </WrapPanel>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+       
     </Grid>
 </Window>
