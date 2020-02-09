@@ -7,7 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
    
-    <StackPanel>
-        
+    <StackPanel Name="StudentPanel">
+        <DataGrid ItemsSource="{Binding}" 
+                  HeadersVisibility="Column"
+                  HorizontalGridLinesBrush="Green"
+                  VerticalGridLinesBrush="Red"
+                  />
+        <DataGrid ItemsSource="{Binding}" Margin="0 10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="#"/>
+                <DataGridHyperlinkColumn Binding="{Binding Email}" Header="Эл. почта"/>
+                <DataGridTemplateColumn Header="Дата рождения">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding BirthDay, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>        
+        </DataGrid>
     </StackPanel>
 </Window>
+
+    

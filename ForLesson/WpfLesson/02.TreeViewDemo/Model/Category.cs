@@ -11,15 +11,5 @@ namespace _02.TreeViewDemo.Model
     {
         public string Name { get; set; }
         public ObservableCollection<Category> Categories { get; set; }
-
-        public Category()
-        {
-            
-        }
-
-        public ObservableCollection<Category> AllCateogories()
-        {
-            return Categories;
-        }
     }
 }

@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:_03.RoutedEventsDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid ButtonBase.Click="Button_Click" Name="Grid">
+        <Button Margin="100" Click="Button_Click" Name="Outer">
+            <Button.Content>
+                <local:ExtendButton x:Name="Inner" Width="100" 
+                                    ExtendClick="Inner_ExtendClick"
+                                    Height="100" Content="Inner" />
+            </Button.Content>
+        </Button>
     </Grid>
 </Window>

@@ -8,7 +8,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
-       
-    </Grid>
+    <StackPanel>
+        <TreeView Name="CategoriesTreeView" Margin="8">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate ItemsSource="{Binding Categories}" DataType="{x:Type model:Category}">
+                    <TextBlock Text="{Binding Name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        <TreeView Margin="8"
+                  Name="Explorer"
+                  TreeViewItem.Expanded="Explorer_Expanded"/>
+    </StackPanel>
 </Window>
