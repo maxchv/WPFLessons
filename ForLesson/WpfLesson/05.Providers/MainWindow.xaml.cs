@@ -24,7 +24,9 @@ namespace _05.Providers
         {
             InitializeComponent();
 
-            ItemsControlProducts.ItemsSource = new ProductSource().AllProducts();
+            //ItemsControlProducts.ItemsSource = new ProductSource().AllProducts();            
         }
     }
+
+   
 }

@@ -25,6 +25,6 @@ namespace _05.Providers
 
         };
 
-        public List<Product> AllProducts() => prouducts;
+        public List<Product> AllProducts(string name) => prouducts.FindAll(p => p.Name.ToLower().Contains(name.ToLower()));
     }
 }

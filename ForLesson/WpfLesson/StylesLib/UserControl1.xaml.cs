@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _05.Providers
+namespace StylesLib
 {
     /// <summary>
-    /// Логика взаимодействия для XmlDataWindow.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class XmlDataWindow : Window
+    public partial class UserControl1 : UserControl
     {
-        public XmlDataWindow()
+        public UserControl1()
         {
             InitializeComponent();
-            //genderCombo.ItemsSource = Enum.GetValues(typeof(Gender));
         }
-    }
-
-    public enum Gender
-    {
-        Male,
-        Female,
-        Unknown
     }
 }

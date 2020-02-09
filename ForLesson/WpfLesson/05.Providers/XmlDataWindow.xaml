@@ -5,9 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_05.Providers"
         mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="XmlDataWindow" Height="450" Width="800">
-    <Grid>
-        <!--<ListBox Grid.Row="0">
+    <Window.Resources>
+        <XmlDataProvider x:Key="currencies" 
+                         Source="http://resources.finance.ua/ru/public/currency-cash.xml"/>
+        <XmlDataProvider x:Key="carsProvider">
+            <x:XData>
+                <!--/cars-->
+                <cars xmlns="">
+                    <!--//@id-->
+                    <car id="1" price="1000">
+                        <model>ВАЗ 2101</model>
+                    </car>
+                    <car id="2" price="100">
+                        <model>ЗАЗ</model>
+                    </car>
+                    <car id="3" price="10000">
+                        <model>Mazda</model>
+                    </car>
+                </cars>
+            </x:XData>
+        </XmlDataProvider>
+
+        <!--Enum.GetValues(typeof(Gender))-->
+        <ObjectDataProvider ObjectType="sys:Enum" x:Key="genderProvider" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Gender"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <StackPanel>
+        <ListBox ItemsSource="{Binding Source={StaticResource carsProvider}, XPath=//car}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding XPath=@id}" Margin="10 0"/>
+                        <TextBlock Text="{Binding XPath=model}" Width="100"/>
+                        <TextBlock Text="{Binding XPath=@price}" Margin="10 0"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox ItemsSource="{Binding Source={StaticResource currencies}, XPath=//organization}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -23,6 +63,7 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>-->
-    </Grid>
+        </ListBox>
+        <ComboBox Name="genderCombo" ItemsSource="{Binding Source={StaticResource genderProvider}}"/>
+    </StackPanel>
 </Window>

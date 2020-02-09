@@ -11,7 +11,9 @@
     <StackPanel>
         <TreeView Name="CategoriesTreeView" Margin="8">
             <TreeView.Resources>
-                <HierarchicalDataTemplate ItemsSource="{Binding Categories}" DataType="{x:Type model:Category}">
+                <HierarchicalDataTemplate 
+                    ItemsSource="{Binding Categories}" 
+                    DataType="{x:Type model:Category}">
                     <TextBlock Text="{Binding Name}"/>
                 </HierarchicalDataTemplate>
             </TreeView.Resources>

@@ -4,11 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_05.Providers"
+        xmlns:sys="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+    <Window.Resources>        
+        <ObjectDataProvider x:Key="products" ObjectType="local:ProductSource" 
+                            MethodName="AllProducts">            
+            <ObjectDataProvider.MethodParameters>Asus</ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <ItemsControl x:Name="ItemsControlProducts">
+        <ItemsControl x:Name="ItemsControlProducts" 
+                      ItemsSource="{Binding Source={StaticResource products}}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="8" Width="150" ToolTip="{Binding Name}">

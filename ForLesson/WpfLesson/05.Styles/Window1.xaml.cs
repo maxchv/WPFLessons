@@ -12,24 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace _05.Providers
+namespace _05.Styles
 {
     /// <summary>
-    /// Логика взаимодействия для XmlDataWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class XmlDataWindow : Window
+    public partial class Window1 : Window
     {
-        public XmlDataWindow()
+        public Window1()
         {
             InitializeComponent();
-            //genderCombo.ItemsSource = Enum.GetValues(typeof(Gender));
         }
-    }
-
-    public enum Gender
-    {
-        Male,
-        Female,
-        Unknown
     }
 }

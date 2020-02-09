@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:_05.Styles">
+    <SolidColorBrush x:Key="buttonColor" Color="Aqua" />
+    <Style x:Key="baseButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource buttonColor}"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <Style BasedOn="{StaticResource baseButtonStyle}" 
+               TargetType="Button">
+        <Setter Property="Background" Value="Aqua"/>
+        <!--<EventSetter Event="Click" Handler="button1_Click"/>-->
+    </Style>
+</ResourceDictionary>
