@@ -52,11 +52,10 @@
                     <TextBlock Foreground="Blue">Header 3</TextBlock>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Example #2" IsSelected="False">
-                
+            <TabItem Header="Example #2" IsSelected="False">                
                     <Button Content="Button" FontSize="24">
                         <Button.Style>                            
-                            <Style TargetType="Button">
+                            <Style TargetType="Button">                             
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="Button">
