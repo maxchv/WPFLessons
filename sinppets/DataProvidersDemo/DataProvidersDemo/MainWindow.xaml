@@ -29,6 +29,7 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <ListBox Grid.Row="1" 
                  ItemsSource="{Binding Source={StaticResource SimpleProvider}, 
@@ -62,7 +63,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListView x:Name="lvCurrencies"
+        <ListView x:Name="lvCurrencies" Grid.Row="2"
                   ItemsSource="{Binding Source={StaticResource CurrencyDataProvider}, 
                                         XPath=//organization}">
             <ListView.View>
