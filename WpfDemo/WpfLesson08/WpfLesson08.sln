@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLesson08", "WpfLesson08\WpfLesson08.csproj", "{61BAA36C-1D91-4FBF-A521-603EE0DF6FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleLibrary", "StyleLibrary\StyleLibrary.csproj", "{5CA4AC1B-2A40-4D26-AA25-7B04BBFA5DE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61BAA36C-1D91-4FBF-A521-603EE0DF6FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BAA36C-1D91-4FBF-A521-603EE0DF6FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BAA36C-1D91-4FBF-A521-603EE0DF6FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BAA36C-1D91-4FBF-A521-603EE0DF6FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA4AC1B-2A40-4D26-AA25-7B04BBFA5DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA4AC1B-2A40-4D26-AA25-7B04BBFA5DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA4AC1B-2A40-4D26-AA25-7B04BBFA5DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA4AC1B-2A40-4D26-AA25-7B04BBFA5DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44E548C7-5EE9-46CB-A1B4-707309CCD9CC}
+	EndGlobalSection
+EndGlobal

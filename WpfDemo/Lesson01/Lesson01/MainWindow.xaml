@@ -1,0 +1,19 @@
+﻿<Window x:Class="Lesson01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lesson01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel Margin="8" Orientation="Horizontal">
+            <TextBox Width="300" Padding="3" TextChanged="TextBox_TextChanged"/>
+            <TextBlock Name="textBox1" Width="300" Padding="3" />
+        </StackPanel>
+        <StackPanel Margin="8" Orientation="Horizontal">
+            <TextBox Width="300" Padding="3" Name="textBox2"/>
+            <TextBlock Text="{Binding ElementName=textBox2, Path=Text}" Width="300" Padding="3" />
+        </StackPanel>
+    </StackPanel>
+</Window>

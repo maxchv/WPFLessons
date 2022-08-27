@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Water-Lilies.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Water-Lilies.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Images\Water-Lilies.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

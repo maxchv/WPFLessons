@@ -10,7 +10,8 @@
         <CommandBinding Command="ApplicationCommands.Open" Executed="CommandBinding_Executed" 
                         CanExecute="CommandBinding_CanExecute" />
         <CommandBinding Command="NavigationCommands.LastPage" />
-        <CommandBinding Command="local:UserCommands.Exit" CanExecute="CommandBinding_CanExecute_1" Executed="CommandBinding_Executed_1"/>
+        <CommandBinding Command="local:UserCommands.Exit" CanExecute="CommandBinding_CanExecute_1" 
+						Executed="CommandBinding_Executed_1"/>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">

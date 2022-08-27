@@ -60,6 +60,7 @@ namespace _03.RoutedEventsDemo
             DependencyProperty.Register("MyProperty", typeof(string), typeof(ExtendButton), new PropertyMetadata(""));
         
         // Создание собственного маршрутизируемого события
+        
         public static readonly RoutedEvent ExtendClickEvent = EventManager.RegisterRoutedEvent(
        "ExtendClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ExtendButton));
         
@@ -74,5 +75,6 @@ namespace _03.RoutedEventsDemo
             base.OnClick();
             RaiseEvent(new RoutedEventArgs(ExtendClickEvent)); // вызов (поднятие) события
         }
+
     }
 }

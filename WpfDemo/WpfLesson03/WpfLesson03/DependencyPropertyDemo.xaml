@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfLesson03.DependencyPropertyDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson03"
+        mc:Ignorable="d"
+        Title="DependencyPropertyDemo" Height="450" Width="800"
+        FontSize="18">
+    <StackPanel Margin="10" Visibility="Hidden">
+        <Expander Header="DataBinding" IsExpanded="False">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="textBox1" Margin="10" Width="100"/>
+                <Label Margin="10" Width="100" Content="{Binding Text, ElementName=textBox1}"/>
+            </StackPanel>
+        </Expander>
+        <Expander Header="Inheritance Properties" IsExpanded="False">
+            <StackPanel Margin="10">
+                <Button Padding="10" FontSize="20">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="0,0,10,0">Label</Label>
+                        <TextBlock VerticalAlignment="Center">TextBlock</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Expander>
+        <Expander Header="Using properties">
+            <StackPanel Margin="10" Name="StudentPanel1">
+                <StackPanel Orientation="Horizontal">
+                    <Label>First Name:</Label>
+                    <TextBlock Text="{Binding FirstName}" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Last Name:</Label>
+                    <TextBlock Text="{Binding LastName}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Expander>
+        <Expander Header="Using dependecy properties">
+            <StackPanel Margin="10" Name="StudentPanel2">
+                <StackPanel Orientation="Horizontal">
+                    <Label>FirstName: </Label>
+                    <TextBox Name="FirstNameTextBox" Margin="0,0,10,0" Width="150" VerticalContentAlignment="Center"></TextBox>
+                    <Label>LastName</Label>
+                    <TextBox Name="LastNameTextBox" Margin="0,0,10,0" Width="150"  VerticalContentAlignment="Center"></TextBox>
+                    <Button Click="Button_Click">Update</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>First Name:</Label>
+                    <TextBlock Text="{Binding FirstName}" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Last Name:</Label>
+                    <TextBlock Text="{Binding LastName}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>

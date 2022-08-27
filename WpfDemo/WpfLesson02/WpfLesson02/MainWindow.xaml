@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfLesson02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLesson02"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Hello WPF" 
+        Height="450" Width="800"
+        MaxHeight="450" MaxWidth="800"
+        MinHeight="450" MinWidth="800">
+    <StackPanel>
+        <local:Person FirstName="Вася" SecondName="Пупкин" />
+        <Button Margin="16" FontSize="{Binding ElementName=SliderFontSize, Path=Value}">
+            Push me
+            <!--<Label>
+                <StackPanel>
+                    <Image Source="https://toppng.com/uploads/preview/xml-logo-11551050351hvxmtc3fbp.png" Width="100"/>
+                    <Button>Push me</Button>
+                </StackPanel>
+            </Label>-->
+        </Button>
+        <Slider Name="SliderFontSize" Margin="16" Minimum="12" Maximum="35" TickFrequency="1"/>
+    </StackPanel>
+</Window>

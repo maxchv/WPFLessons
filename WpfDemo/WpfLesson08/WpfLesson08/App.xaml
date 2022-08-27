@@ -1,0 +1,31 @@
+﻿<Application x:Class="WpfLesson08.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfLesson08"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--<sys:Double x:Key="fontSize">30</sys:Double>
+        <SolidColorBrush x:Key="forergound" Color="Gray"/>
+        <Style x:Key="basic" TargetType="{x:Type FrameworkElement}">
+            <Setter Property="Control.FontFamily" Value="Arial" />
+            <Setter Property="Control.Margin" Value="10" />
+        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource basic}">
+            <Setter Property="FontSize" Value="{StaticResource fontSize}" />
+            <Setter Property="Foreground" Value="{StaticResource forergound}" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource basic}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontStyle" Value="Italic" />
+        </Style>-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="pack://application:,,,/WpfLesson08;component/AppStyle.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/StyleLibrary;component/SharedStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
